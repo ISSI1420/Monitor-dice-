@@ -1,218 +1,163 @@
-<!-- PROJECT LOGO -->
+<!-- HEADER -->
 <p align="center">
-  <img src="https://img.icons8.com/fluency/96/dice.png" width="120"/>
+  <img src="https://img.icons8.com/fluency/96/dice.png" width="110"/>
 </p>
 
-<h1 align="center">🎰 Telegram 777 Dice Monitor Bot</h1>
+<h1 align="center">🎰 Telegram 777 Dice Monitor</h1>
+<h3 align="center">Advanced Telethon-Based Jackpot Detection Bot</h3>
 
 <p align="center">
-  Advanced Telethon-based monitoring bot that detects jackpot dice results (value 64), tracks user hits, and sends beautiful HTML notifications with dynamic inline buttons.
+A premium, production-ready monitoring bot built with Telethon.  
+Detects jackpot dice results (value 64), tracks user hits, and sends rich HTML notifications  
+with dynamic inline buttons for every hit.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-Python%203.10-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Framework-Telethon-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge">
   <img src="https://img.shields.io/badge/Maintainer-@TON50B-purple?style=for-the-badge">
 </p>
 
 ---
 
-## 🚀 Overview
+# ⭐ Overview
 
-This bot monitors Telegram chats for **dice messages** and detects the jackpot value (**64**).  
-It keeps track of user hits, stores them, and sends **fully dynamic notifications** including:
+The Telegram 777 Dice Monitor is a highly optimized bot that:
 
-- 🧮 Hit counter per user  
-- 🔗 Buttons linking to each dice message  
-- 🏆 Automatic winner announcement  
-- 🧰 Fully customizable templates  
+- Detects dice rolls in selected Telegram chats  
+- Watches specifically for the jackpot value 64  
+- Tracks the user’s progress until winning  
+- Sends multi-button HTML notifications  
+- Stores hit history permanently  
+- Includes a live interactive command-line control panel  
 
-It also includes an **interactive CLI** to manage chats, preview templates, and control behavior in real time.
+Supports:
+- Termux (Android)
+- Linux VPS
+- Docker & Docker Compose
+- Render.com (Docker Deploy)
+- Windows CMD/PowerShell
 
 ---
 
-## ✨ Features
+# ✨ Main Features
 
-### 🎯 Dice Detection   
-Automatically detects dice messages and checks for the jackpot value (default: **64**).
+### 🎯 Jackpot Detection
+Automatically identifies dice messages with value 64.
 
-### 📊 Hit Tracking  
-Tracks hit counts per user and stores them persistently in `user_hits.json`.
+### 📊 Persistent Hit Tracking
+Tracks and stores hits for every user across restarts.
 
-### 📨 Dynamic Notifications  
-Sends HTML-styled messages with clickable inline buttons:
-- “Hit 1”
-- “Hit 2”
-- “Hit 3”
-- ...
+### 📨 Dynamic Inline Buttons
+Every hit gets its own button:
+- Hit 1  
+- Hit 2  
+- Hit 3  
+
+Each button opens the original Telegram message.
 
 ### 🖥 Interactive CLI
-Control the entire bot while it is running:
 
 add @ChatUsername remove @ChatUsername list preview partial preview winner quit
 
-### ⚙ Fully Configurable
-Edit everything in `settings.json`:
-- Number of hits required to win  
-- Dice target value  
-- Templates  
-- Result channel  
-
-### 🐳 Production Deployment Support
-- Termux
-- Docker / Docker Compose
-- Linux VPS
-- Render.com
-- Windows (CMD/PowerShell)
+### ⚙ Full Customization
+All settings adjustable in `settings.json`.
 
 ---
 
+# 🗂 Project Structure
 
+telegram-777-monitor/ │ ├── interactive_monitor_777_with_buttons.py ├── settings.json ├── requirements.txt ├── .env.example ├── Dockerfile ├── docker-compose.yml ├── user_hits.json ├── LICENSE └── README.md
 
-# ⚙ Configuration
+---
 
-Create a file named `.env`:
+# ⚙ Environment Setup
 
-API_ID=123456 API_HASH=your_api_hash STRING_SESSION= SESSION_NAME=monitor_session RESULTS_ACCOUNT=@YourResultsChannel
+Create `.env`:
 
-Generate a String Session:
+API_ID=123456 API_HASH=your_api_hash_here STRING_SESSION= SESSION_NAME=monitor_session RESULTS_ACCOUNT=@YourResultsChannel
 
-```bash
+Generate string session:
+
 python3 -m telethon.sessions
 
+---
+
+# ▶ Run on Linux / VPS
+
+sudo apt update sudo apt install python3 python3-pip -y pip3 install -r requirements.txt python3 interactive_monitor_777_with_buttons.py
 
 ---
 
-▶ Run on Linux / VPS
+# 📱 Run on Termux (Android)
 
-sudo apt update
-sudo apt install python3 python3-pip -y
-pip3 install -r requirements.txt
-python3 interactive_monitor_777_with_buttons.py
+pkg update pkg install python git -y pip install --upgrade pip
 
+git clone https://github.com/yourname/telegram-777-monitor cd telegram-777-monitor
 
----
-
-📱 Run on Termux (Android)
-
-pkg update
-pkg install python git -y
-pip install --upgrade pip
-
-git clone https://github.com/yourname/telegram-777-monitor
-cd telegram-777-monitor
-
-pip install -r requirements.txt
-python interactive_monitor_777_with_buttons.py
-
+pip install -r requirements.txt python interactive_monitor_777_with_buttons.py
 
 ---
 
-🐳 Run with Docker
+# 🐳 Run via Docker
 
-Build:
+### Build:
 
 docker build -t telegram-777-monitor .
 
-Run:
+### Run:
 
 docker run --env-file .env telegram-777-monitor
 
-
 ---
 
-🐙 Docker Compose
+# 🐙 Docker Compose
 
 docker compose up -d
 
-Runs in background with auto-restart support.
+---
 
+# ☁ Deploy on Render.com
+
+1. Push project to GitHub  
+2. Create Web Service  
+3. Select Docker environment  
+4. Add `.env` variables  
+5. Deploy  
 
 ---
 
-☁ Deploy on Render.com (Docker)
+# 🪟 Run on Windows
 
-1. Push repository to GitHub
+pip install -r requirements.txt python interactive_monitor_777_with_buttons.py
 
-
-2. Create a new Web Service
-
-
-3. Select Docker environment
-
-
-4. Add environment variables
-
-
-5. Deploy instantly
-
-
-
-Render will handle the Dockerfile automatically.
-
-
----
-
-🪟 Windows (CMD / PowerShell)
-
-pip install -r requirements.txt
-python interactive_monitor_777_with_buttons.py
-
-Run in background:
+Background:
 
 Start-Job -ScriptBlock { python interactive_monitor_777_with_buttons.py }
 
-
 ---
 
-🧠 Target Chat Management (While Bot is Running)
-
-add @ChatUsername
-remove @ChatUsername
-list
-preview partial
-preview winner
-
-
----
-
-🔥 Auto-Restart (systemd)
+# 🔥 Auto-Restart on Linux (systemd)
 
 nano /etc/systemd/system/telegram-monitor.service
 
-Add:
 
-[Unit]
-Description=Telegram 777 Monitor
-After=network.target
 
-[Service]
-WorkingDirectory=/root/telegram-777-monitor
-ExecStart=/usr/bin/python3 interactive_monitor_777_with_buttons.py
-Restart=always
+[Unit] Description=Telegram 777 Monitor After=network.target
 
-[Install]
-WantedBy=multi-user.target
+[Service] WorkingDirectory=/root/telegram-777-monitor ExecStart=/usr/bin/python3 interactive_monitor_777_with_buttons.py Restart=always
 
-Enable:
+[Install] WantedBy=multi-user.target
 
-systemctl enable telegram-monitor
-systemctl start telegram-monitor
+Enable service:
 
+systemctl enable telegram-monitor systemctl start telegram-monitor
 
 ---
 
-👑 Credits
+# 👑 Credits
 
 Developed and maintained by @TON50B
 
-
----
-
-⭐ Support
-
-If you like this project, consider giving it a GitHub Star ⭐
-Your support helps the project grow!
-
-</br>
+If you find this useful, consider starring the repository.
