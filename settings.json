@@ -1,0 +1,10 @@
+{
+  "RESULTS_ACCOUNT": "@TON50B",
+  "HITS_TO_WIN": 3,
+  "DICE_TARGET_VALUE": 64,
+  "PERSIST_FILE": "user_hits.json",
+  "NOTIFICATION_TEMPLATES": {
+    "partial_hit": "<b>🎰 Hit!</b>\n\n<b>User:</b> {first_name}{username_part}\n<b>Message link:</b>\n<a href=\"{link}\">Click to view</a>\n\n<b>{remaining} hits remaining to win</b> 🏆",
+    "winner": "<b>🎉 Winner! 🎉</b>\n\n<b>User:</b> {first_name}{username_part}\n<b>Completed {hits_needed} hits of {dice_value}!</b> 🏆\n\n<b>Hit links:</b>\n{links}\n\n<b>Congratulations!</b> 🎰"
+  }
+}

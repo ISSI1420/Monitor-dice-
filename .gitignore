@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.env
+user_hits.json
+.env.*
+.vscode/
+.DS_Store
